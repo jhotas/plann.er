@@ -5,3 +5,7 @@
 * {
   min-width: 0; /* Reseta a largura da aplicação */
 }
+
+input {
+  color-scheme: dark;
+}
