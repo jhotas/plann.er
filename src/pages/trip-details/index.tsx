@@ -1,6 +1,9 @@
-import { Calendar, CircleCheck, CircleDashed, Link2, MapPin, Plus, Settings2, Tag, UserCog, X } from "lucide-react";
+import { Calendar, MapPin, Plus, Settings2 } from "lucide-react";
 import { useState } from "react";
 import { CreateActivityModal } from "./create-activity-modal";
+import { ImportantLinks } from "./important-links";
+import { Guests } from "./guests";
+import { Activities } from "./activities";
 
 export function TripDetailsPage() {
   const [isCreateActivityModalOpen, setIsCreateActivityModalOpen] = useState(false)
@@ -48,83 +51,16 @@ export function TripDetailsPage() {
             </button>
           </div>
 
-          <div className="space-y-8">
-            <div className="space-y-2.5">
-              <div className="flex gap-2 items-baseline">
-                {/*Dias das atividades*/}
-                <span className="text-xl text-zinc-300 font-semibold">
-                  Dia 17
-                </span>
-                <span className="text-xs text-zinc-500">Sábado</span>
-              </div>
-              {/*Atividades*/}
-              <p className="text-zinc-500 text-sm">
-                Nenhuma ativadade cadastrada nessa data.
-              </p>
-            </div>
-
-            <div className="space-y-2.5">
-              <div className="flex gap-2 items-baseline">
-                {/*Dias das atividades*/}
-                <span className="text-xl text-zinc-300 font-semibold">
-                  Dia 18
-                </span>
-                <span className="text-xs text-zinc-500">Domingo</span>
-              </div>
-
-              {/*Atividades*/}
-              <div className="space-y-2.5">
-                <div className="px-4 py-2.5 bg-zinc-900 rounded-xl shadow-shape flex items-center gap-3">
-                  <CircleCheck className="size-5 text-lime-300" />
-                  <span className="text-zinc-100">Academia em grupo</span>
-                  <span className="text-zinc-400 text-sm ml-auto">08:00h</span>
-                </div>
-              </div>
-
-              <div className="space-y-2.5">
-                <div className="px-4 py-2.5 bg-zinc-900 rounded-xl shadow-shape flex items-center gap-3">
-                  <CircleCheck className="size-5 text-lime-300" />
-                  <span className="text-zinc-100">Academia em grupo</span>
-                  <span className="text-zinc-400 text-sm ml-auto">08:00h</span>
-                </div>
-              </div>
-            </div>
-          </div>
+          <Activities />
         </div>
 
         {/*Parte lateral*/}
         <div className="w-80 space-y-6">
-          
+          <ImportantLinks />
+
           <div className='w-full h-px bg-zinc-800' />
-          {/*Secção dos convidados*/}
-          <div className="space-y-6">
-            <h2 className="font-semibold text-xl">Convidados</h2>
-            <div className="space-y-5">
-              <div className="flex items-center justify-between gap-4">
-                <div className="space-y-1.5">
-                  <span className="block font-medium text-zinc-100">Jean Oliveira</span>
-                  <span className="block text-xs text-zinc-400 truncate hover:text-zinc-200">
-                    jcwilbertt@gmail.com
-                  </span>
-                </div>
-                <CircleDashed className="text-lime-400 size-5 shrink-0" />
-              </div>
-              {/*Segundo link começa aqui*/}
-              <div className="flex items-center justify-between gap-4">
-                <div className="space-y-1.5">
-                  <span className="block font-medium text-zinc-100">Bárbara Pereira</span>
-                  <span className="block text-xs text-zinc-400 truncate hover:text-zinc-200">
-                    barbarafjp12@gmail.com
-                  </span>
-                </div>
-                <CircleDashed className="text-lime-400 size-5 shrink-0" />
-              </div>
-            </div>
-            <button className="bg-zinc-800 w-full justify-center text-zinc-200 rounded-lg px-5 h-11 font-medium flex items-center gap-2 hover:bg-zinc-700 transition">
-              <UserCog className="size-5" />
-              Gerenciar convidados
-            </button>
-          </div>
+
+          <Guests />
         </div>
       </main>
 
