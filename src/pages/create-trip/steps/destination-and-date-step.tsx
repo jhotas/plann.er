@@ -28,11 +28,11 @@ export function DestinationAndDateStep({
 
       <div className="flex items-center gap-2">
         <Calendar className="size-5 text-zinc-400" />
-        <input
+        <Input
           disabled={isGuestsInputOpen}
-          type="text"
-          placeholder="Quando?"
-          className="bg-transparent text-lg placeholder-zinc-400 w-40 outline-none"
+          type='text'
+          placeholder='Quando?'
+          variant="w40"
         />
       </div>
 
